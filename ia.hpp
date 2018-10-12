@@ -2,20 +2,31 @@
 #define IALGORITHM_HPP
 
 #include <vector>
-#include <queue>
+#include <iostream>
 
 class IAlgorithm {
 protected:
-    std::queue<int> paginas;
-    std::vector<int> quadros;
+    std::vector<int> pages;
+    std::vector<int> frames;
 
-    int faltaDePaginas;
+    int pageFault;
+    unsigned int lastFrame;
 
 protected:
-    IAlgorithm(std::queue<int> paginas):
-    paginas(paginas),
-    faltaDePaginas(0)
-    {};
+    IAlgorithm(std::vector<int> paginas,int framesCount):
+    pages(paginas),
+    pageFault(0),
+    lastFrame(0)
+    {
+        frames.resize(framesCount, -1);
+    };
+
+    void showFrames(){
+        for (auto && fr : frames){
+            std::cout << fr << " ";
+        }
+        std::cout << "\n";
+    };
 };
 
 #endif
