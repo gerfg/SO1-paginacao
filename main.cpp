@@ -10,7 +10,7 @@ int main(int argc, char const *argv[])
     }
 
     int numQuadros;
-    std::queue<int> paginas = readInstance(argv[1], &numQuadros);
+    std::vector<int> paginas = readInstance(argv[1], &numQuadros);
 
     Fifo f(paginas, numQuadros);
 

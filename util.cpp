@@ -1,8 +1,8 @@
 #include "util.hpp"
 
-std::queue<int> readInstance(std::string file, int *numQuadros) {
+std::vector<int> readInstance(std::string file, int *numQuadros) {
 
-    std::queue<int> pages;
+    std::vector<int> pages;
 
     std::fstream read (file, std::fstream::in | std::fstream::out);
 
@@ -13,10 +13,10 @@ std::queue<int> readInstance(std::string file, int *numQuadros) {
     while(true){
         read >> page;
         if( read.eof() ) break;
-        pages.push(page);
+        pages.push_back(page);
     }
 
-    read.close();    
+    read.close();
 
     return pages;
 }

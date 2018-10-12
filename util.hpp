@@ -5,6 +5,6 @@
 #include <string>
 #include <fstream>
 
-std::queue<int> readInstance(std::string file, int * numQuadros);
+std::vector<int> readInstance(std::string file, int * numQuadros);
 
 #endif

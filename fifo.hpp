@@ -5,10 +5,17 @@
 
 #include <iostream>
 #include <string>
+#include <queue>
 
 class Fifo : public IAlgorithm {
+private:
+    std::queue<int> pagesQueue;
+
+    bool pageOnRam(int page);
+    void updateFrames(int page);
+    
 public:
-    Fifo(std::queue<int> pages, int numQuadros);
+    Fifo(std::vector<int> pages, int numQuadros);
 };
 
 #endif
