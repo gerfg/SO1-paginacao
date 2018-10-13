@@ -1,5 +1,5 @@
 COMP = g++
-FLAGS = -O3 -Wall -fpic
+FLAGS = -O3
 
 all:
 	$(COMP) *.cpp *.hpp $(FLAGS) -o exec

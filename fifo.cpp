@@ -1,7 +1,8 @@
 #include "fifo.hpp"
 
 Fifo::Fifo(std::vector<int> pages, int numQuadros):
-IAlgorithm(pages, numQuadros)
+IAlgorithm(pages, numQuadros),
+lastFrame(0)
 {
     std::cout << frames.size() << "\n";
     
@@ -26,20 +27,10 @@ IAlgorithm(pages, numQuadros)
     std::cout << pageFault << "\n";
 }
 
-bool Fifo::pageOnRam(int page) {
-    for(auto&& fr : frames) {
-        if (fr == page) {
-            return true;
-        }
-    }
-    return false;
-}
-
 void Fifo::updateFrames(int page) {
-    
-    if (lastFrame == frames.size())
-        lastFrame = 0;
+        if (lastFrame == frames.size())
+            lastFrame = 0;
 
-    frames[lastFrame] = page;
-    lastFrame++;
-}
+        frames[lastFrame] = page;
+        lastFrame++;
+    }

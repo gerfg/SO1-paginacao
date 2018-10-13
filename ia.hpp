@@ -10,23 +10,38 @@ protected:
     std::vector<int> frames;
 
     int pageFault;
-    unsigned int lastFrame;
 
-protected:
-    IAlgorithm(std::vector<int> paginas,int framesCount):
+    IAlgorithm(std::vector<int> paginas, int framesCount):
     pages(paginas),
-    pageFault(0),
-    lastFrame(0)
+    pageFault(0)
     {
         frames.resize(framesCount, -1);
     };
 
     void showFrames(){
+        std::cout << "Frames: ";
         for (auto && fr : frames){
             std::cout << fr << " ";
         }
         std::cout << "\n";
     };
+
+    void showPages(){
+        std::cout << "Pages: ";
+        for (auto && pg : pages){
+            std::cout << pg << " ";
+        }
+        std::cout << "\n";
+    };
+
+    bool pageOnRam(int page) {
+        for(auto&& fr : frames) {
+            if (fr == page) {
+                return true;
+            }
+        }
+        return false;
+    }
 };
 
 #endif

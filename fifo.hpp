@@ -10,10 +10,9 @@
 class Fifo : public IAlgorithm {
 private:
     std::queue<int> pagesQueue;
+    unsigned int lastFrame;
 
-    bool pageOnRam(int page);
     void updateFrames(int page);
-    
 public:
     Fifo(std::vector<int> pages, int numQuadros);
 };
