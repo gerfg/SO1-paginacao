@@ -15,6 +15,7 @@ pags(pages)
             pags.erase(pags.begin());
         }
     }
+    std::cout << "OTM " << pageFault << "\n";
 };
 
 int Optimum::willNotBeRecentlyAccessed() {

@@ -11,6 +11,7 @@ int positionToStartTheSearch;
 int leastRecentlyAccessed();
 
 void updateFrame(int framePosition);
+void showPags();
 
 public:
     LRU(std::vector<int> pages, int framesCount);
